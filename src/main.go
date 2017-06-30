@@ -47,6 +47,21 @@ func PostNoteHandler(w http.ResponseWriter, r *http.Request)
 	w.Write(j)
 }
 
+func GetNoteHandler(w http.ResponseWriter, r *http.Request)
+{
+	var notes []Note
+	for _, v := range noteStore {
+		notes = append(notes, v)
+	}
+	w.Header().Set("Content-Type", "application/json")
+	j, err := json.Marshal(notes)
+	if err != nil {
+		panic(err)
+	}
+	w.WriteHeader(http.StatusOK)
+	w.Write(j)
+}
+
 func main() {
 
 s := strcon.SwapCase("Gopher")
