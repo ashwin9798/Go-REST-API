@@ -1,14 +1,14 @@
 package main
 
 import (
-"encoding/json"
-"log"
-"fmt"
-"net/http"
-"strconv"
-"time"
+	"encoding/json"
+	"log"
+	"fmt"
+	"net/http"
+	"strconv"
+	"time"
 
-"github.com/gorilla/mux"
+	"github.com/gorilla/mux"
 )
 
 type Note struct {
@@ -63,9 +63,5 @@ func GetNoteHandler(w http.ResponseWriter, r *http.Request)
 }
 
 func main() {
-
-s := strcon.SwapCase("Gopher")
-
-fmt.Println("Converted string is :", s)
 
 }
